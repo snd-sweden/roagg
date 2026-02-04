@@ -1,6 +1,9 @@
 [project]
 name = "roagg"
-version = "2025.0.8"
+description = "A command line tool to aggregate research output metadata from DataCite, OpenAIRE and OpenAlex based on an organisations ROR ID"
+readme = "README.md"
+license = {file = "LICENSE"}
+version = "2025.0.9"
 requires-python = ">=3.10"
 dependencies = []
 
