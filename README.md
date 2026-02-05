@@ -53,7 +53,7 @@ Properties to collect for each research output:
 |openAlexCitedByCount                  |integer|Citation count for the resource provided by the OpenAlex API                           |
 |openAlexReferencedWorksCount          |integer|Reference count for the resource provided by the OpenAlex API                          |
 |titleWordCount                        |integer|Number of words in the title (useful for sorting in some cases)                        |
-|referencedByDoi                       |string |                                                                                       |
+|referencedByDoi                       |string |DOI of object(s) (for instance papers) referencing this object (JSON list)                                                                                       |
 
 
 ## Install

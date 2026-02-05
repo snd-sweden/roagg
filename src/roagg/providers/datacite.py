@@ -112,7 +112,7 @@ class DataCiteAPI:
             if (r.get("relationType") == "IsReferencedBy" or r.get("relationType") == "IsSupplementTo" or r.get("relationType") == "IsSourceOf") and r.get("relatedIdentifierType") == "DOI"
         ]
         if related and len(related) > 0:
-            record.referencedByDoi = related[0].get("relatedIdentifier")
+            record.referencedByDoi = json.dumps([r.get("relatedIdentifier") for r in related])
         else:
             record.referencedByDoi = None
 
