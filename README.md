@@ -1,6 +1,4 @@
 # Research output aggregator 
-> [!NOTE]
-> This script is under development
 
 The goal of this project is to create a script to get a summarization for a research organization about the research output.  
 First target is to query and process information from DataCite.  
@@ -10,7 +8,7 @@ The goal for this script is to create a list over research output where an organ
 * creator with affiliation to the organization
 * contributor with affiliation to the organization
 
-input: ROR-id and list of variants on the organization name.
+Input: ROR-id and list of variants on the organization name.
 
 Properties to collect for each research output:
 |Field                                 |Type   |Comment                                                                                |
@@ -19,7 +17,7 @@ Properties to collect for each research output:
 |resourceType                          |string |The resource type (free text string)                                                   |
 |title                                 |string |Title of the resource (first one if multiple)                                          |
 |publisher                             |string |Publisher (free text)                                                                  |
-|createdAt                             |string |Created date if availible                                                              |
+|createdAt                             |string |Created date if available                                                              |
 |updatedAt                             |string |Updatade date if availible                                                             |
 |isPublisher                           |bool   |True if the the publisher match the requested organisation                             |
 |isFunder                              |bool   |True if the the funder match the requested organisation                                |
@@ -57,25 +55,27 @@ Properties to collect for each research output:
 
 
 ## Install
-`pip install .`
-
-## Install dev
-`pip install -e .`
-
-## Development stuff to do
-- [x] ROR get name variants from ROR
-- [x] CLI add options to get name list from txt
-- [x] DataCite API build query for matching publisher and affiliation
-- [ ] Crossref API build query for matching publisher and affiliation
-- [ ] Publish as cmd tool on PyPI
+`pip install roagg`
 
 ## Run
 List arguments:  
 `roagg --help`  
 
+## Install dev
+`git clone git@github.com:snd-sweden/roagg.git`  
+`cd roagg`  
+`pip install -e .`  
+
 ## Tests
 Some tests are available, to run them:  
 `python -m pytest`
+
+## Development stuff to do
+- [x] ROR get name variants from ROR
+- [x] CLI add options to get name list from txt
+- [x] DataCite API build query for matching publisher and affiliation
+- [x] Publish as cmd tool on PyPI
+- [ ] Crossref API build query for matching publisher and affiliation
 
 ### Some example arguments
 Chalmers with ror and name list:  
