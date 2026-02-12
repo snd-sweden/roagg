@@ -10,7 +10,14 @@ The goal for this script is to create a list over research output where an organ
 
 Input: ROR-id and list of variants on the organization name.
 
-Properties to collect for each research output:
+## Properties to collect for each research output
+
+Roagg collects a fiew fields for each resource found and do de-duplications based on the DOI found in each source.
+
+<details>
+
+<summary>List of all properties in the aggregated results</summary>
+
 |Field                                 |Type   |Comment                                                                                |
 |--------------------------------------|-------|---------------------------------------------------------------------------------------|
 |publicationYear                       |integer|The year of publication, can be empty in some cases                                    |
@@ -53,6 +60,7 @@ Properties to collect for each research output:
 |titleWordCount                        |integer|Number of words in the title (useful for sorting in some cases)                        |
 |referencedByDoi                       |string |DOI of object(s) (for instance papers) referencing this object (JSON list)                                                                                       |
 
+</details>
 
 ## Install
 `pip install roagg`
