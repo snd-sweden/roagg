@@ -7,8 +7,9 @@ The goal for this script is to create a list over research output where an organ
 * publisher
 * creator with affiliation to the organization
 * contributor with affiliation to the organization
+* funder
 
-Input: ROR-id and list of variants on the organization name.
+Input: [ROR-id](https://ror.org) and list of variants on the organization name.
 
 ## Properties to collect for each research output
 
@@ -63,11 +64,38 @@ Roagg collects a fiew fields for each resource found and do de-duplications base
 </details>
 
 ## Install
-`pip install roagg`
+```bash
+pip install roagg
+```
 
 ## Run
 List arguments:  
-`roagg --help`  
+```bash
+roagg --help
+```
+
+### Some example arguments
+
+Run for the organization Karlstad University (KAU) with ror:  
+```bash
+roagg --ror https://ror.org/05s754026 --output kau.csv
+```
+
+Chalmers with ror and name list:  
+```bash
+roagg --ror https://ror.org/040wg7k59 --name-txt tests/name-lists/chalmers.txt --output chalmers.csv
+```
+
+GU with ror, name list and extra name not in the text file:  
+```bash
+roagg --name "Department of Nephrology Gothenburg" --ror https://ror.org/01tm6cn81 --name-txt tests/name-lists/gu.txt --output data/gu.csv
+```
+
+KTH with ror and name list:  
+```bash
+roagg --ror https://ror.org/026vcq606 --name-txt tests/name-lists/kth.txt --output data/kth.csv
+```
+
 
 ## Install dev
 `git clone git@github.com:snd-sweden/roagg.git`  
@@ -84,27 +112,6 @@ Some tests are available, to run them:
 - [x] DataCite API build query for matching publisher and affiliation
 - [x] Publish as cmd tool on PyPI
 - [ ] Crossref API build query for matching publisher and affiliation
-
-### Some example arguments
-Chalmers with ror and name list:  
-```bash
-roagg --ror https://ror.org/040wg7k59 --name-txt tests/name-lists/chalmers.txt --output chalmers.csv
-```
-
-GU with ror, name list and extra name not in the text file:  
-```bash
-roagg --name "Department of Nephrology Gothenburg" --ror https://ror.org/01tm6cn81 --name-txt tests/name-lists/gu.txt --output data/gu.csv
-```
-
-KTH with ror and name list:  
-```bash
-roagg --ror https://ror.org/026vcq606 --name-txt tests/name-lists/kth.txt --output data/kth.csv
-```
-
-KAU with ror:  
-```bash
-roagg --ror https://ror.org/05s754026 --output kau.csv
-```
 
 ## License
 [MIT License](LICENSE)
