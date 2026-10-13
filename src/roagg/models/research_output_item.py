@@ -49,6 +49,10 @@ class ResearchOutputItem:
     openAlexId: str = None
     openAlexCitedByCount: int = None
     openAlexReferencedWorksCount: int = None
+    #crossref specific
+    crossRefResourceType: str = None
+    crossRefReferenceCount: int = None
+    crossRefIsReferencedByCount: int = None
     #extra fields
     titleWordCount: int = None
     referencedByDoi: str = None

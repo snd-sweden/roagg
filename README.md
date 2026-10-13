@@ -58,6 +58,9 @@ Roagg collects a fiew fields for each resource found and do de-duplications base
 |openAireId                            |string |Id for the resource in OpenAire                                                        |
 |openAlexId                            |string |Id for the resource in OpenAlex                                                        |
 |openAlexCitedByCount                  |integer|Citation count for the resource provided by the OpenAlex API                           |
+|crossRefResourceType                  |string |Resource type for the resource provided by the CrossRef API                           |
+|crossRefReferenceCount                |integer|Reference count for the resource provided by the CrossRef API                          |
+|crossRefIsReferencedByCount           |integer|Citation count for the resource provided by the CrossRef API                           |
 |openAlexReferencedWorksCount          |integer|Reference count for the resource provided by the OpenAlex API                          |
 |titleWordCount                        |integer|Number of words in the title (useful for sorting in some cases)                        |
 |referencedByDoi                       |string |DOI of object(s) (for instance papers) referencing this object (JSON list)                                                                                       |

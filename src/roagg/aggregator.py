@@ -4,6 +4,7 @@ from roagg.helpers.ror import get_names_from_ror
 from roagg.providers.datacite import DataCiteAPI
 from roagg.providers.openaire import OpenAireAPI
 from roagg.providers.openalex import OpenAlexAPI
+from roagg.providers.crossref import CrossRefAPI
 import logging
 from roagg.models.research_output_item import ResearchOutputItem
 import json
@@ -39,6 +40,10 @@ def aggregate(name: List[str] = [], ror: str = "", output: str = "output.csv") -
     openalex_id = openalex.get_openalex_id_from_ror()
     logging.info(f"OpenAlex ID from ROR {ror} : {openalex_id}")
     openalex.get_records()
+
+    crossreff = CrossRefAPI(ror=ror, results=research_output_items)
+    logging.info(f"CrossRef from ROR {ror}")
+    crossreff.get_records()
 
     logging.info(f"Writing: {output}")
     
