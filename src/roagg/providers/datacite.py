@@ -33,7 +33,13 @@ class DataCiteAPI:
             else:
                 name_conditions = wildcard or exact
             
-            query_parts.extend([f"{field}:({name_conditions})" for field in name_fields])
+            for field in name_fields:
+                conditions = name_conditions
+                if field == "publisher.name":
+                    # DataCite's publisher index does not match escaped spaces.
+                    publisher_wildcard = ' OR '.join(n for n in self.name if '*' in n)
+                    conditions = ' OR '.join(c for c in (publisher_wildcard, exact) if c)
+                query_parts.append(f"{field}:({conditions})")
         
         if self.ror:
             ror_fields = [
